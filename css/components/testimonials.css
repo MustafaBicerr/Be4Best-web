@@ -1,0 +1,94 @@
+/* css/components/testimonials.css */
+
+.bg-dark {
+    background-color: #1a1a1a; /* Simsiyah değil, antrasit */
+    color: #ffffff;
+}
+
+.text-gold {
+    color: var(--color-primary);
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+/* --- KART TASARIMI --- */
+.testimonial-card {
+    background: #252525; /* Kart rengi zeminden biraz açık */
+    padding: 40px 30px;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+    /* Kartların hepsi eşit boyda olsun */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary); /* Hoverda altın çerçeve */
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.review-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.stars {
+    color: var(--color-primary); /* Gold */
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Müşteri Bilgisi */
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+}
+
+.country {
+    font-size: 0.8rem;
+    color: #aaa;
+    display: block;
+}
+
+/* Swiper Pagination (Noktalar) */
+.swiper-pagination-bullet {
+    background: #666;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-primary);
+    opacity: 1;
+}
+
+/* Swiper Alt Boşluk */
+.testimonial-swiper {
+    padding-bottom: 50px !important; /* Noktalar için yer */
+}

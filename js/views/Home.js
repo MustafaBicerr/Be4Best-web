@@ -2,6 +2,8 @@
 import { initScrollReveal } from '../modules/scroll.js'; // En üste ekle
 import { Api } from '../services/api.js';
 import ProductCard from '../components/ProductCard.js';
+import GlobalMap from '../components/GlobalMap.js';
+import Testimonials from '../components/Testimonials.js';
 
 const Home = {
     render: async () => {
@@ -150,6 +152,10 @@ const Home = {
                     </div>
                 </div>
             </section>
+
+            ${await GlobalMap.render()}
+
+            ${await Testimonials.render()}
         `;
     },
     afterRender: async () => {
@@ -158,37 +164,40 @@ const Home = {
         initScrollReveal();
 
         // --- PARALLAX ZOOM EFFECT ---
-const bannerSection = document.getElementById('parallax-banner');
-const bannerImg = document.querySelector('.banner-bg-img');
+        const bannerSection = document.getElementById('parallax-banner');
+        const bannerImg = document.querySelector('.banner-bg-img');
 
-if (bannerSection && bannerImg) {
-    window.addEventListener('scroll', () => {
-        // Banner ekranda görünüyor mu kontrolü (Performans için)
-        const rect = bannerSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
+        if (bannerSection && bannerImg) {
+            window.addEventListener('scroll', () => {
+                // Banner ekranda görünüyor mu kontrolü (Performans için)
+                const rect = bannerSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
 
-        // Eğer banner ekranın içindeyse veya yakınındaysa hesapla
-        if (rect.top < windowHeight && rect.bottom > 0) {
-            
-            // Scroll miktarına göre bir katsayı üret
-            // Banner yukarı çıktıkça resim yavaşça aşağı kayar ve büyür
-            const scrollSpeed = 0.1; // Resmin kayma hızı (0.5 = yarım hız)
-            const zoomSpeed = 0.00015; // Zoom hızı
-            
-            // Banner'ın ekranın ortasına olan uzaklığına göre hesaplayalım
-            const scrollOffset = window.scrollY - bannerSection.offsetTop;
-            
-            // Matematik: TranslateY ile Parallax, Scale ile Zoom
-            // Scroll yaptıkça resim hafif aşağı kayar (parallax) ve büyür (scale)
-            bannerImg.style.transform = `
-                translateY(${scrollOffset * scrollSpeed * 0.2}px) 
-                scale(${1 + Math.abs(scrollOffset) * zoomSpeed})
-            `;
+                // Eğer banner ekranın içindeyse veya yakınındaysa hesapla
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    
+                    // Scroll miktarına göre bir katsayı üret
+                    // Banner yukarı çıktıkça resim yavaşça aşağı kayar ve büyür
+                    const scrollSpeed = 0.1; // Resmin kayma hızı (0.5 = yarım hız)
+                    const zoomSpeed = 0.00015; // Zoom hızı
+                    
+                    // Banner'ın ekranın ortasına olan uzaklığına göre hesaplayalım
+                    const scrollOffset = window.scrollY - bannerSection.offsetTop;
+                    
+                    // Matematik: TranslateY ile Parallax, Scale ile Zoom
+                    // Scroll yaptıkça resim hafif aşağı kayar (parallax) ve büyür (scale)
+                    bannerImg.style.transform = `
+                        translateY(${scrollOffset * scrollSpeed * 0.2}px) 
+                        scale(${1 + Math.abs(scrollOffset) * zoomSpeed})
+                    `;
+                }
+            });
         }
-    });
-}
 
-    }
-};
+        await GlobalMap.afterRender();
+        await Testimonials.afterRender();
+
+            }
+        };
 
 export default Home;

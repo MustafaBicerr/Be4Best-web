@@ -21,6 +21,37 @@
         "cta": "KEŞFETMEYE BAŞLA",
         "scroll": "Aşağı Kaydır"
     },
+    "footer": {
+        "slogan": "Estetik ve konforun mükemmel uyumu. Kayseri'den dünyaya uzanan lüks mobilya deneyimi.",
+        "collections": {
+            "title": "Koleksiyonlar",
+            "living_room": "Oturma Grupları",
+            "dining_room": "Yemek Odaları",
+            "bedroom": "Yatak Odaları",
+            "accessories": "Aksesuar & Dekor",
+            "new_arrivals": "Yeni Gelenler"
+        },
+        "corporate": {
+            "title": "Kurumsal",
+            "about": "Hakkımızda",
+            "sustainability": "Sürdürülebilirlik",
+            "hr": "İnsan Kaynakları",
+            "shipping": "Kargo ve Teslimat",
+            "contact": "İletişim"
+        },
+        "newsletter": {
+            "title": "Haberdar Olun",
+            "text": "Yeni koleksiyon ve özel indirimlerden ilk siz haberdar olun.",
+            "placeholder": "E-posta adresiniz",
+            "button_aria": "Abone Ol"
+        },
+        "bottom": {
+            "rights": "Tüm hakları saklıdır.",
+            "privacy": "Gizlilik Politikası",
+            "terms": "Kullanım Şartları",
+            "kvkk": "KVKK"
+        }
+    },
     "pages": {
         "home_page": {
             "sections": {
@@ -51,10 +82,22 @@
                     "title": "Minimalist Yaşam, <br> Maksimum Konfor",
                     "subtitle": "%50'ye varan sezon indirimi başladı.",
                     "btn": "İNDİRİMLERİ GÖR"
+                },
+                "global_map": {
+                    "quote": "SINIRLARI AŞIYORUZ",
+                    "title": "Kayseri'den Dünyaya",
+                    "subtitle": "Yerli üretim gücümüz ve uluslararası lojistik ağımızla, kalitemizi kıtalararası taşıyoruz.",
+                    "counters": {
+                        "countries": "İHRACAT ÜLKESİ",
+                        "customers": "MUTLU MÜŞTERİ",
+                        "global_prpjects": "GLOBAL PROJE"
+                    }
+                },
+                "testimonials": {
+                    "title": "Global Memnuniyet",
+                    "subtitle": "MÜŞTERİ DENEYİMLERİ"
                 }
             }
-        }
+      }
     }
-    
-
 }

@@ -21,6 +21,37 @@
         "cta": "EXPLORE NOW",
         "scroll": "Scroll Down"
     },
+    "footer": {
+        "slogan": "The perfect harmony of aesthetics and comfort. A luxury furniture experience reaching from Kayseri to the world.",
+        "collections": {
+            "title": "Collections",
+            "living_room": "Living Rooms",
+            "dining_room": "Dining Rooms",
+            "bedroom": "Bedrooms",
+            "accessories": "Accessories & Decor",
+            "new_arrivals": "New Arrivals"
+        },
+        "corporate": {
+            "title": "Corporate",
+            "about": "About Us",
+            "sustainability": "Sustainability",
+            "hr": "Human Resources",
+            "shipping": "Shipping & Delivery",
+            "contact": "Contact"
+        },
+        "newsletter": {
+            "title": "Stay Informed",
+            "text": "Be the first to know about new collections and exclusive discounts.",
+            "placeholder": "Your email address",
+            "button_aria": "Subscribe"
+        },
+        "bottom": {
+            "rights": "All rights reserved.",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Use",
+            "kvkk": "Data Protection"
+        }
+    },
      "pages": {
         "home_page": {
             "sections": {
@@ -51,6 +82,20 @@
                     "title": "Minimalist Living, <br> Maximum Comfort",
                     "subtitle": "Season sale up to 50% started.",
                     "btn": "VIEW SALE"
+                },
+                "global_map": {
+                    "quote": "WE GO BEYOND BOUNDARIES",
+                    "title": "From Kayseri to the World",
+                    "subtitle": "With our domestic production strength and international logistics network, we carry our quality across continents.",
+                    "counters": {
+                        "countries": "EXPORT COUNTRIES",
+                        "customers": "HAPPY CUSTOMERS",
+                        "global_prpjects": "GLOBAL PROJECTS"
+                    }
+                },
+                 "testimonials": {
+                    "title": "Global Satisfaction",
+                    "subtitle": "CUSTOMER EXPERIENCES"
                 }
             }
         }

@@ -9,12 +9,15 @@
 @import 'layout/grid.css';
 @import 'layout/header.css';
 @import 'layout/footer.css';
+@import 'layout/floating.css';
 
 /* 3. Bileşenler (Components) */
 @import 'components/buttons.css';
 @import 'components/cards.css';
 @import 'components/forms.css';
 @import 'components/hero.css';
+@import 'components/global-map.css';
+@import 'components/testimonials.css';
 
 /* 4. Sayfa Özel Stilleri (Views) */
 @import 'views/home.css';

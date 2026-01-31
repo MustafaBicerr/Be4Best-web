@@ -1,0 +1,105 @@
+/* css/layout/floating.css */
+
+.floating-actions-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999; /* Haritaların ve her şeyin üzerinde */
+    display: flex;
+    flex-direction: column; /* Alt alta dizilsin */
+    gap: 15px;
+}
+
+/* --- ORTAK BUTON STİLİ --- */
+.fab-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.fab-btn:hover {
+    transform: scale(1.1); /* Üzerine gelince biraz büyüsün */
+    color: #fff;
+}
+
+/* --- RENKLER --- */
+.btn-whatsapp {
+    background-color: #25D366; /* Orijinal WP Yeşili */
+    /* Animasyon: 3 saniyede bir zıplasın */
+    animation: bounce-pulse 3s infinite;
+}
+
+.btn-phone {
+    background-color: var(--color-primary); /* Sitenin ana rengi (Gold/Siyah) */
+    /* Animasyon: WP ile senkron olmasın, 4 saniyede bir zıplasın */
+    animation: bounce-pulse 4s infinite ease-in-out; 
+    animation-delay: 1s; /* Biraz geç başlasın */
+}
+
+/* --- TOOLTIP (Yana açılan yazı) --- */
+.tooltip-text {
+    position: absolute;
+    right: 70px; /* Butonun solunda çıksın */
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.fab-btn:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- ANİMASYON (Zıplama / Titreme) --- */
+@keyframes bounce-pulse {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    10% {
+        transform: translateY(-10px); /* Yukarı zıpla */
+    }
+    20% {
+        transform: translateY(0); /* Aşağı in */
+    }
+    30% {
+        transform: translateY(-5px); /* Ufak zıpla */
+    }
+    40% {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    /* %40 ile %100 arası bekleme süresidir */
+}
+
+/* Mobilde butonları biraz küçültelim */
+@media (max-width: 768px) {
+    .floating-actions-container {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+    .fab-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    /* Mobilde tooltip çıkmasın, parmakla basınca görünmez zaten */
+    .tooltip-text { display: none; }
+}

@@ -90,4 +90,26 @@ export const Api = {
         if (error) { console.error('Featured Hatası:', error); return []; }
         return data;
     },
+
+    // 4. İhracat Yapılan Ülkeleri Getir
+    async getExportMap() {
+        const { data, error } = await supabase
+            .from('export_countries')
+            .select('*');
+            
+        if (error) { console.error('Map Data Hatası:', error); return []; }
+        return data;
+    },
+    
+    // 5. Müşteri Yorumlarını Getir
+    async getTestimonials() {
+        const { data, error } = await supabase
+            .from('testimonials')
+            .select('*')
+            .eq('is_active', true) // Sadece aktif olanları çek
+            .order('created_at', { ascending: false });
+            
+        if (error) { console.error('Testimonials Error:', error); return []; }
+        return data;
+    },
 };
