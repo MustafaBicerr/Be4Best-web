@@ -1,0 +1,53 @@
+/* css/base/typography.css */
+
+/* Genel Yazı Ayarları */
+body {
+    font-size: 16px; /* Baz değer */
+    line-height: 1.6;
+    color: var(--color-text-main);
+}
+
+/* BAŞLIKLAR (Lüks Font: Playfair Display) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Responsive Font Boyutları (Mobilde devasa durmasın diye) */
+h1 { font-size: 3.5rem; } /* ~56px */
+h2 { font-size: 2.5rem; } /* ~40px */
+h3 { font-size: 2rem; }   /* ~32px */
+h4 { font-size: 1.5rem; } /* ~24px */
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Mobilya sitesi için özel "Lead" metinler */
+.text-lead {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    font-weight: 300;
+}
+
+/* Küçük Detay Metinleri (Ürün kartındaki kategori vb.) */
+.text-small {
+    font-size: 0.875rem; /* 14px */
+    color: var(--color-text-light);
+}
+
+/* Renk Yardımcıları */
+.text-primary { color: var(--color-primary); }
+.text-white { color: var(--color-white); }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* MEDYA SORGULARI 
+   Mobilde fontları biraz küçültelim ki ekranı kaplamasın.
+*/
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+}

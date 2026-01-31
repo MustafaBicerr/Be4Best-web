@@ -1,0 +1,40 @@
+/* css/base/reset.css */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Bu çok önemli: Padding eklersen kutu şişmez */
+}
+
+html {
+    scroll-behavior: smooth; /* Sayfa içi linklerde yumuşak kayma */
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; /* Fontların "jilet" gibi görünmesi için */
+    line-height: 1.5;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block; /* Animasyonlar için display block/inline-block gerekir */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, textarea {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+}

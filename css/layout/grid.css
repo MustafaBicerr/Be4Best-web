@@ -1,0 +1,53 @@
+/* css/layout/grid.css */
+
+/* ANA CONTAINER
+   Bu sınıf, içeriğin ultra-wide monitörlerde kenarlara yapışmasını engeller.
+   Örn: Header'ın içindeki logoyu ve menüyü bu container saracak.
+*/
+.container {
+    width: 100%;
+    max-width: var(--container-width); /* variables.css'ten geliyor (1280px) */
+    margin-inline: auto; /* Ortalar */
+    padding-inline: 20px; /* Mobilde kenarlara yapışmasın diye iç boşluk */
+}
+
+/* Daha geniş içerikler için (Örn: Hero Slider) */
+.container-wide {
+    max-width: var(--container-width-wide); /* 1440px */
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+/* İçeriği tamamen sıfır yapan yapı (Full Screen Bannerlar için) */
+.container-fluid {
+    width: 100%;
+    padding-inline: 0;
+}
+
+/* FLEXBOX GRID SİSTEMİ 
+   Basit, etkili ve responsive sıralama için.
+*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -15px; /* Sütun boşluklarını dengeler */
+}
+
+/* Sütunlar arası boşluk (Gutter) */
+.col {
+    padding-inline: 15px;
+    flex: 1; /* Otomatik genişle */
+}
+
+/* RESPONSIVE KIRILMA NOKTALARI */
+@media (max-width: 768px) {
+    /* Mobilde container biraz daha dar olabilir */
+    .container {
+        padding-inline: 15px; 
+    }
+    
+    /* Mobilde flex yapılar alt alta insin */
+    .flex-mobile-column {
+        flex-direction: column;
+    }
+}

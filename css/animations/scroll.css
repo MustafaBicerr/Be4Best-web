@@ -1,0 +1,25 @@
+/* css/animations/scroll.css */
+
+/* Metinler Aşağıdan Yukarı */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Görseller Soldan Sağa (veya Zoom) */
+.reveal-image {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 2.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-image.active {
+    opacity: 1;
+    transform: scale(1);
+}

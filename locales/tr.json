@@ -1,0 +1,60 @@
+{
+    "nav": {
+        "home": "ANASAYFA",
+        "about": "HAKKIMIZDA",
+        "shop": "KOLEKSİYONLAR",
+        "contact": "İLETİŞİM",
+        "cart": "SEPET",
+        "categories": {
+            "living_room": "Oturma Grubu",
+            "balcony": "Balkon Seti",
+            "sofa_3": "3'lü Kanepe",
+            "sofa_2": "2'li Kanepe",
+            "armchair": "Berjer",
+            "chair": "Sandalye",
+            "puff": "Puf"
+        }
+    },
+    "hero": {
+        "title": "Evinizdeki Lüksün <br> Yeni Tanımı",
+        "subtitle": "Estetik, konfor ve zarafetin kusursuz uyumu.",
+        "cta": "KEŞFETMEYE BAŞLA",
+        "scroll": "Aşağı Kaydır"
+    },
+    "pages": {
+        "home_page": {
+            "sections": {
+                "home_about": {
+                    "title": "Estetik ve Kalitenin <br> Buluşma Noktası",
+                    "subtitle": "HİKAYEMİZ",
+                    "desc": "Yılların getirdiği tecrübeyle Be4Best, modern tasarım anlayışını geleneksel ustalıkla harmanlıyor. Sadece mobilya üretmiyoruz; yaşam alanlarınıza ruh katan, konfor ve zarafeti birleştiren zamansız parçalar tasarlıyoruz.",
+                    "feature_1": "Global Vizyon",
+                    "feature_2": "Premium Kalite",
+                    "feature_3": "İnovatif Tasarım",
+                    "btn": "DEVAMINI OKU"
+                },
+                "best_sellers": {
+                    "title": "En Çok Tercih Edilenler",
+                    "subtitle": "KOLEKSİYONUMUZUN YILDIZLARI",
+                    "quick_view": "Hızlı İncele",
+                    "add_to_cart": "Sepete Ekle"
+                },
+                "new_arrivals": {
+                    "title": "Yeni Koleksiyon",
+                    "subtitle": "SEZONUN EN TAZE PARÇALARI"
+                },
+                "featured_products": {
+                    "title": "Editörün Seçimi",
+                    "subtitle": "SİZİN İÇİN ÖZEL OLARAK SEÇTİKLERİMİZ"
+                },
+                "banner1": {
+                    "title": "Minimalist Yaşam, <br> Maksimum Konfor",
+                    "subtitle": "%50'ye varan sezon indirimi başladı.",
+                    "btn": "İNDİRİMLERİ GÖR"
+                }
+            }
+        }
+    }
+    
+
+}

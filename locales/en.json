@@ -1,0 +1,58 @@
+{
+    "nav": {
+        "home": "HOME",
+        "about": "ABOUT US",
+        "shop": "COLLECTIONS",
+        "contact": "CONTACT",
+        "cart": "CART",
+        "categories": {
+            "living_room": "Living Room Set",
+            "balcony": "Balcony Set",
+            "sofa_3": "3 Seater Sofa",
+            "sofa_2": "2 Seater Sofa",
+            "armchair": "Armchair",
+            "chair": "Chair",
+            "puff": "Puff"
+        }
+    },
+    "hero": {
+        "title": "Redefining Luxury <br> In Your Home",
+        "subtitle": "The perfect harmony of aesthetics, comfort, and elegance.",
+        "cta": "EXPLORE NOW",
+        "scroll": "Scroll Down"
+    },
+     "pages": {
+        "home_page": {
+            "sections": {
+                "home_about": {
+                    "title": "Where Aesthetics Meets <br> Quality",
+                    "subtitle": "OUR STORY",
+                    "desc": "With years of experience, Be4Best blends modern design concepts with traditional craftsmanship. We don't just manufacture furniture; we design timeless pieces that add soul to your living spaces, combining comfort and elegance.",
+                    "feature_1": "Global Vision",
+                    "feature_2": "Premium Quality",
+                    "feature_3": "Innovative Design",
+                    "btn": "READ MORE"
+                },
+                "best_sellers": {
+                    "title": "Best Sellers",
+                    "subtitle": "STARS OF OUR COLLECTION",
+                    "quick_view": "Quick View",
+                    "add_to_cart": "Add to Cart"
+                },
+                "new_arrivals": {
+                    "title": "New Arrivals",
+                    "subtitle": "FRESH PIECES OF THE SEASON"
+                },
+                "featured_products": {
+                    "title": "Editor's Pick",
+                    "subtitle": "SPECIALLY SELECTED FOR YOU"
+                },
+                "banner1": {
+                    "title": "Minimalist Living, <br> Maximum Comfort",
+                    "subtitle": "Season sale up to 50% started.",
+                    "btn": "VIEW SALE"
+                }
+            }
+        }
+    }
+}

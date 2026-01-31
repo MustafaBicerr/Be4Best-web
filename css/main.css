@@ -1,0 +1,32 @@
+/* css/main.css */
+
+/* 1. Temel Ayarlar */
+@import 'base/reset.css';
+@import 'base/variables.css';
+@import 'base/typography.css';
+
+/* 2. Yerleşim (Layout) */
+@import 'layout/grid.css';
+@import 'layout/header.css';
+@import 'layout/footer.css';
+
+/* 3. Bileşenler (Components) */
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/forms.css';
+@import 'components/hero.css';
+
+/* 4. Sayfa Özel Stilleri (Views) */
+@import 'views/home.css';
+@import 'views/product.css';
+
+/* 5. Animasyonlar */
+@import 'animations/scroll.css';
+
+/* Genel Gövde Stili */
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-white);
+    color: var(--color-text-main);
+    overflow-x: hidden; /* Taşmaları engelle */
+}

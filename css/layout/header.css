@@ -1,0 +1,303 @@
+/* css/layout/header.css - TEMİZLENMİŞ VE DÜZELTİLMİŞ VERSİYON */
+
+/* 1. Header Temel Yapı */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    /* GÖLGE EFEKTİ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.site-header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    height: 70px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+}
+
+/* Scrolled Renk Değişimleri */
+.site-header.scrolled .logo,
+.site-header.scrolled .nav-links a,
+.site-header.scrolled .icon-btn {
+    color: var(--color-dark);
+}
+
+.site-header:not(.scrolled) .logo,
+.site-header:not(.scrolled) .nav-links > ul > li > a,
+.site-header:not(.scrolled) .icon-btn {
+    color: var(--color-white); 
+}
+
+/* Flex Container */
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative;  <-- BUNU İPTAL ETTİK Kİ MEGA MENÜ EKRANA YAYILSIN */
+}
+
+/* Logo */
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    transition: color 0.3s;
+}
+.logo span { color: var(--color-primary); }
+
+/* Menü Linkleri */
+.nav-links ul {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+/* --- MEGA MENU İÇİN KRİTİK AYAR --- */
+.site-header .nav-links,
+.site-header .nav-links ul,
+.site-header .nav-links li {
+    position: static; /* Bu, dropdown'ın butona değil EKRANA göre hizalanmasını sağlar */
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s;
+    display: inline-block;
+    padding: 15px 0; /* Hover alanını genişlet */
+}
+
+/* --- MEGA MENU GÖVDESİ --- */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Header'ın hemen altından başla */
+    left: 0;
+    width: 100%; /* Tüm ekran genişliği */
+    background: #ffffff;
+    
+    /* İçeriği Ortala */
+    display: flex;
+    justify-content: center;
+    
+    /* Başlangıç Durumu (Gizli) */
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 20px; /* Aşağıdan yukarı efekt için */
+    
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    z-index: 900;
+    padding: 40px 0;
+}
+
+/* HOVER OLUNCA AÇILMA (Sola Kaydırma YOK!) */
+.dropdown-trigger:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0; /* Yerine otur */
+    /* BURADAKİ transform: translateX(-50%) SİLİNDİ! SORUN BUYDU. */
+}
+
+/* Mega Menu Grid */
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: var(--container-width); /* variables.css'ten gelen sınır (1280px) */
+    padding: 0 20px;
+}
+
+/* Kategori Kartı */
+.menu-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    text-decoration: none !important;
+}
+
+.menu-category-card:hover {
+    background: #f9f9f9;
+}
+
+/* Görsel Alanı */
+.cat-img-placeholder {
+    width: 100px;
+    height: 70px;
+    background-color: #f4f4f4;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cat-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-category-card:hover .cat-img-placeholder img {
+    transform: scale(1.1);
+}
+
+.menu-category-card span {
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* --- DİĞER HEADER ELEMANLARI --- */
+
+/* İkonlar */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icon-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: relative;
+}
+.icon-btn:hover { color: var(--color-primary) !important; }
+
+/* Sepet Sayacı */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MOBİL MENÜ */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fff;
+    z-index: 2000;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-overlay.active {
+    right: 0;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+.mobile-nav-links li {
+    margin-bottom: 20px;
+}
+
+.mobile-nav-links a {
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.mobile-only { display: none; }
+
+@media (max-width: 992px) {
+    .nav-links { display: none; }
+    .mobile-only { display: block; }
+}
+
+/* css/layout/header.css EN ALTINA EKLE */
+
+/* --- MOBİL İÇİN ÖZEL STİLLER --- */
+
+/* Accordion Başlığı */
+.mobile-dropdown-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.mobile-dropdown-trigger i {
+    transition: transform 0.3s ease;
+}
+
+/* Gizli Alt Menü Kutusu */
+.mobile-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f8f8f8; /* Hafif Gri Arka Plan (Ana menüden ayrılır) */
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Alt Menü Linkleri */
+.mobile-dropdown-content li {
+    border-bottom: 1px solid #e5e5e5; /* Ayırıcı Çizgi */
+    margin-bottom: 0;
+}
+
+.mobile-dropdown-content li:last-child {
+    border-bottom: none;
+}
+
+.mobile-dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+}
+
+/* Küçük Resimler */
+.mobile-dropdown-content img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    background-color: #ddd; /* Resim yoksa gri kutu */
+}

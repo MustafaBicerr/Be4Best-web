@@ -1,0 +1,238 @@
+/* css/components/cards.css */
+
+/* --- GRID YAPISI (3 Sütun) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Eşit Sütun */
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* --- KART TEMEL --- */
+.product-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* Dışarı taşanları gizle */
+    border-radius: 4px;
+}
+
+/* Medya Alanı (Resim) */
+.card-media {
+    position: relative;
+    width: 100%;
+    height: auto; 
+    /* 2. EN / BOY ORANI (Genişlik / Yükseklik) */
+    /* Mobilyacılar için genelde 4/3 veya 3/2 idealdir */
+    aspect-ratio: 3 / 1.8;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+/* --- KRİTİK DOKUNUŞ: OKUNABİLİRLİK GRADIENTİ --- */
+/* Resmin üzerine, sadece alt kısmı karartan sanal bir katman ekliyoruz */
+.card-media::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Resmin alt %60'ını kaplasın */
+    /* Siyahtan şeffafa doğru yumuşak geçiş */
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    z-index: 1; /* Resmin üstünde, yazının altında */
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .card-media::after {
+    opacity: 0.9; /* Hoverda biraz daha koyulaşsın ki detaylar okunsun */
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease; /* Yavaş zoom efekti */
+}
+
+/* İkinci resim başlangıçta gizli */
+.img-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* --- HOVER EFEKTLERİ (ŞOV ZAMANI) --- */
+.product-card:hover .img-front { opacity: 0; } /* Ön resim gider */
+.product-card:hover .img-back { opacity: 1; transform: scale(1.06); } /* Arka resim gelir ve büyür */
+
+/* Overlay Yazı (Resim Üzerinde) */
+.card-overlay-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+    width: 90%;
+    color: var(--color-white);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .card-overlay-info {
+    transform: translateY(-10px); /* Hafif yukarı kayar */
+}
+
+.product-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    /* margin-bottom: 5px; */
+    color: #fff;
+}
+
+.product-category {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Fiyat Alanı (Kartın Altında) */
+.card-details {
+    padding: 15px 0;
+    
+    text-align: center;
+}
+
+.price {
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+/* --- BUTONLAR (Quick View / Sepet) --- */
+.card-actions {
+    position: absolute;
+    top: 20px;
+    right: -50px; /* Başlangıçta sağda gizli */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 3;
+}
+
+.product-card:hover .card-actions {
+    right: 20px; /* Hoverda sahneye çıkar */
+}
+
+.action-btn {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* --- YENİ EKLENDİ KURDELESİ (RIBBON) --- */
+.new-badge {
+    position: absolute;
+    top: 20px;
+    right: -32px; /* Köşeye oturtmak için */
+    background: var(--color-primary); /* Gold Rengi */
+    color: #fff;
+    padding: 5px 40px; /* Genişlik */
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(45deg); /* Çapraz Döndür */
+    z-index: 5;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    pointer-events: none; /* Tıklamayı engelleme */
+}
+
+/* --- DETAY KARTI (HOVER REVEAL) --- */
+/* Bu kısım o istediğin "Detaylar Gelsin" olayı */
+.detail-hover-card {
+    position: absolute;
+    bottom: -100%; /* Aşağıda gizli */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    transition: bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 4;
+}
+
+.product-card:hover .detail-hover-card {
+    bottom: 0; /* Hoverda yukarı çıkar */
+}
+
+.detail-content h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.detail-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-bottom: 10px;
+}
+
+.mini-gallery {
+    display: flex;
+    gap: 5px;
+}
+
+.mini-gallery img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.mini-gallery img:hover { transform: scale(1.1); border: 1px solid var(--color-primary); }
+
+/* --- RESPONSIVE (MOBİL YATAY SCROLL) --- */
+@media (max-width: 992px) {
+    .product-grid {
+        display: flex; /* Flex'e çevir */
+        overflow-x: auto; /* Yatay scroll aç */
+        scroll-snap-type: x mandatory; /* Mıknatıs gibi yapışsın */
+        gap: 15px;
+        padding-bottom: 20px; /* Scrollbar payı */
+    }
+
+    .product-card {
+        min-width: 280px; /* Kart genişliği sabit */
+        scroll-snap-align: start; /* Sola yapış */
+    }
+
+    .card-media {
+        /* height: 350px; */
+            height: auto; 
+    /* 2. EN / BOY ORANI (Genişlik / Yükseklik) */
+    /* Mobilyacılar için genelde 4/3 veya 3/2 idealdir */
+    /* aspect-ratio: 3 / 1.8; */
+    }
+    
+    /* Mobilde detay hover'ı kapatabiliriz veya daha basit tutabiliriz */
+    .detail-hover-card { display: none; } 
+    .card-actions { right: 10px; } /* Mobilde butonlar görünsün */
+}
