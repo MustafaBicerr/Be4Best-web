@@ -98,6 +98,51 @@
                     "subtitle": "CUSTOMER EXPERIENCES"
                 }
             }
+        },
+        "about_us_page": {
+            "hero": {
+                "title": "Our Story & Vision",
+                "subtitle": "DEEP ROOTS, MODERN FUTURE"
+            },
+            "story": {
+                "title": "A Success Story in the Furniture Sector",
+                "p1": "Succeeding to become a leading company in the furniture sector with years of experience, Be4Best is among Turkey's respected brands with its product variety, design differences, and quality understanding.",
+                "p2": "With a consumer-oriented approach, reflecting the sector's needs and expectations in the best way, our company constantly improves all production processes by anticipating new trends in home decoration."
+            },
+            "values": {
+                "mission_title": "Our Mission",
+                "mission_desc": "To create and produce world-class, human and environmentally friendly products suitable for different lifestyles through our R&D activities.",
+                "vision_title": "Our Vision",
+                "vision_desc": "To continuously raise the bar in product quality by following technological developments and taking firm steps towards becoming a world brand.",
+                "quality_title": "Quality Policy",
+                "quality_desc": "With the slogan 'Efficiency and Customer Satisfaction', our policy is to meet demands economically, reliably, and on time."
+            },
+            "ceo": {
+                "title": "Message from the CEO",
+                "quote": "Furniture production is not just a job for us; it is a way of thinking and acting with precision. Welcome to our family. We serve the whole world and do our best for you.",
+                "name": "Mr. Nuri",
+                "role": "Founder & CEO"
+            }
+        },
+        "contact_page": {
+            "hero": {
+                "title": "Contact Us",
+                "subtitle": "WE ARE HERE FOR YOUR QUESTIONS AND COLLABORATIONS"
+            },
+            "info": {
+                "address_title": "Factory & Showroom",
+                "address_desc": "Organized Industrial Zone, 12th Street No:5, Melikgazi / Kayseri / Turkey",
+                "phone_title": "Phone & WhatsApp",
+                "email_title": "Email & Export"
+            },
+            "form": {
+                "title": "Send a Message",
+                "name": "Full Name",
+                "email": "Email Address",
+                "subject": "Subject",
+                "message": "Your Message",
+                "btn": "SEND MESSAGE"
+            }
         }
     }
 }

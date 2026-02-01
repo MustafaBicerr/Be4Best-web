@@ -1,0 +1,156 @@
+/* css/views/contact.css - GÜNCELLENMİŞ KATMANLI VERSİYON */
+
+/* --- GENEL PANEL YAPISI (Yeni) --- */
+/* Bölümleri birbirinden ayıran ana kapsayıcılar */
+.contact-section-panel {
+    border-radius: 20px; /* Yumuşak köşeler */
+    padding: 50px 40px; /* İç boşluk */
+    margin-bottom: 40px; /* Alt alta gelen paneller arası boşluk */
+    overflow: hidden;
+}
+
+/* Gri Tonlu Panel (Üstteki Kartlar İçin) */
+.panel-gray {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+}
+
+/* Beyaz Tonlu, Gölgeli Panel (Alttaki Form/Harita İçin) */
+.panel-white-shadow {
+    background-color: #ffffff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); /* Derinlik hissi */
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+
+/* --- İLETİŞİM KARTLARI (Üst Kısım) --- */
+.contact-info-card {
+    background: #fff; /* Gri panelin içinde beyaz kartlar patlar */
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 12px; /* Kartların kendi köşeleri */
+    border: 1px solid transparent; /* Hover için hazırlık */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    height: 100%;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border-color: var(--color-primary);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: #f0f0f0;
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover .contact-icon {
+    background: var(--color-primary);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.contact-info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.contact-info-card p, .contact-info-card a {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    display: block;
+}
+
+
+/* --- FORM VE HARİTA ALANI (Alt Kısım - İç İçe Yapı) --- */
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: stretch; /* İkisi de eşit boyda uzasın */
+}
+
+/* Form Kutusu (İç Container 1) */
+.contact-form-box {
+    flex: 1;
+    /* Beyaz panelin içinde, formu biraz daha ayırmak için hafif gri bir zemin verebiliriz */
+    background: #ebebeb; 
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+/* Harita Kutusu ve Çerçevesi (İç Container 2) */
+.map-box {
+    flex: 1;
+    min-height: 450px;
+    position: relative;
+}
+
+/* İŞTE İSTEDİĞİN ÇERÇEVE (FRAME) */
+.map-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 10px solid #fff; /* Kalın beyaz çerçeve */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Çerçevenin gölgesi */
+}
+
+.map-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(20%) contrast(1.1); /* Haritayı biraz daha sinematik yapalım */
+}
+
+
+/* Form Elemanları */
+.form-group { margin-bottom: 20px; }
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    transition: all 0.3s;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(184, 140, 75, 0.1); /* Gold rengi hafif parlama */
+}
+
+textarea.form-control {
+    resize: none;
+    height: 150px;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 992px) {
+    .contact-section-panel {
+        padding: 30px 20px; /* Mobilde iç boşluğu azalt */
+    }
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .map-box {
+        height: 400px;
+    }
+}

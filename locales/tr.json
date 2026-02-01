@@ -98,6 +98,51 @@
                     "subtitle": "MÜŞTERİ DENEYİMLERİ"
                 }
             }
-      }
+        },
+        "about_us_page": {
+            "hero": {
+                "title": "Hikayemiz & Vizyonumuz",
+                "subtitle": "KÖKLÜ GEÇMİŞ, MODERN GELECEK"
+            },
+            "story": {
+                "title": "Mobilya Sektöründe Bir Başarı Öyküsü",
+                "p1": "Yılların getirdiği tecrübe ile mobilya sektörünün öncü firmalarından biri olmayı başaran Be4Best, ürün çeşitliliği, tasarım farkı ve kalite anlayışıyla Türkiye'nin saygın markaları arasında yer almaktadır.",
+                "p2": "Tüketici odaklı yaklaşımı ile sektörün ihtiyaç ve beklentilerini her noktada ürünlerine ve hizmetlerine en iyi şekilde yansıtan firmamız, ev dekorasyonundaki yeni trendleri öngörerek tüm üretim süreçlerini sürekli geliştirmektedir."
+            },
+            "values": {
+                "mission_title": "Misyonumuz",
+                "mission_desc": "Farklı yaşam tarzlarına uygun, dünya standartlarında, insan ve çevre dostu ürünler oluşturmak ve üretmek.",
+                "vision_title": "Vizyonumuz",
+                "vision_desc": "Teknolojik gelişmeleri takip ederek ürün kalitesinde çıtayı sürekli yükseltmek ve bir dünya markası olma yolunda emin adımlarla ilerlemek.",
+                "quality_title": "Kalite Politikası",
+                "quality_desc": "Verimlilik ve Müşteri Memnuniyeti sloganı ile; talepleri ekonomik, kaliteli ve zamanında karşılamayı ilke edindik."
+            },
+            "ceo": {
+                "title": "CEO'nun Mesajı",
+                "quote": "Mobilya üretmek bizim için sadece bir iş değil; üzerine dikkatle düşünülen ve hassasiyetle hareket edilen bir yaşam biçimidir. Ailemize hoş geldiniz. Tüm dünyaya hizmet veriyor ve sizin için en iyisini yapıyoruz.",
+                "name": "Nuri Bey",
+                "role": "Kurucu & CEO"
+            }
+        },
+        "contact_page": {
+            "hero": {
+                "title": "Bize Ulaşın",
+                "subtitle": "SORULARINIZ VE İŞ BİRLİKLERİ İÇİN BURADAYIZ"
+            },
+            "info": {
+                "address_title": "Fabrika & Showroom",
+                "address_desc": "Organize Sanayi Bölgesi, 12. Cadde No:5, Melikgazi / Kayseri",
+                "phone_title": "Telefon & WhatsApp",
+                "email_title": "E-posta & İhracat"
+            },
+            "form": {
+                "title": "Mesaj Gönderin",
+                "name": "Adınız Soyadınız",
+                "email": "E-posta Adresiniz",
+                "subject": "Konu",
+                "message": "Mesajınız",
+                "btn": "GÖNDER"
+            }
+        }
     }
 }

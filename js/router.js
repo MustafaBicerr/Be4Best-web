@@ -1,13 +1,15 @@
 /* js/router.js */
 import Home from './views/Home.js';
+import About from './views/About.js';
+import Contact from './views/Contact.js';
 // İleride About, Contact importları buraya gelecek
 import { i18n } from './core/i18n.js';
 
 const routes = {
     '/': Home,
     '/index.html': Home, // Bazen sunucular buraya atabilir
-    // '/about': About,
-    // '/contact': Contact
+    '/about': About,
+    '/contact': Contact
 };
 
 export const router = async () => {

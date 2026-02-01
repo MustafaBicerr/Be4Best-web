@@ -1,3 +1,4 @@
+/* js/core/i18n.js */
 export class I18n {
     constructor() {
         this.lang = localStorage.getItem('lang') || 'tr';
@@ -14,15 +15,29 @@ export class I18n {
     updateDOM() {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            const value = key.split('.').reduce((obj, i) => obj[i], this.translations);
-            if (value) el.innerHTML = value; // innerHTML kullanıyoruz ki <br> çalışsın
+            const value = key.split('.').reduce((obj, i) => (obj ? obj[i] : null), this.translations);
+            if (value) el.innerHTML = value; 
+        });
+        
+        // Placeholder ve Aria Label güncellemesi (Footer için eklemiştik)
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            const value = key.split('.').reduce((obj, i) => (obj ? obj[i] : null), this.translations);
+            if (value) el.placeholder = value;
         });
     }
 
-    toggleLang() {
+    async toggleLang() {
+        // 1. Dili değiştir
         this.lang = this.lang === 'tr' ? 'en' : 'tr';
         localStorage.setItem('lang', this.lang);
-        location.reload(); // En temiz yöntem: sayfayı yenile
+        
+        // 2. Yeni JSON dosyasını çek
+        await this.init();
+
+        // 3. Uygulamaya "Dil Değişti" sinyali gönder (Sayfayı yenilemeden!)
+        document.dispatchEvent(new CustomEvent('lang:change'));
     }
 }
+
 export const i18n = new I18n();

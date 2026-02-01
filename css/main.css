@@ -22,6 +22,8 @@
 /* 4. Sayfa Özel Stilleri (Views) */
 @import 'views/home.css';
 @import 'views/product.css';
+@import 'views/about.css';
+@import 'views/contact.css';
 
 /* 5. Animasyonlar */
 @import 'animations/scroll.css';
